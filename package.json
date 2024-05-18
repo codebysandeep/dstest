@@ -1,0 +1,15 @@
+{
+  "name": "figma-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@jamesives/fetch-api-data-action": "^2.4.0"
+  }
+}
