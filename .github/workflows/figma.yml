@@ -11,18 +11,15 @@ jobs:
         with:
           persist-credentials: false
           ref: main  # Specify the branch explicitly
-          node-version: 20
       - name: "Fetch Figma API Data \U0001F4E6"
-        uses: actions/checkout@v2
+        uses: JamesIves/fetch-api-data-action@releases/v2
         with:
           endpoint: https://api.figma.com/v1/files/${{ secrets.FIGMA_FILE_ID }}/variables/local
           configuration: '{ "method": "GET", "headers": {"X-FIGMA-TOKEN": "${{ secrets.FIGMA_PAT }}"} }'
           save-name: figma
-          node-version: 20
       - name: "Deploy Workspace Changes \U0001F680"
-        uses: actions/checkout@v2
+        uses: JamesIves/github-pages-deploy-action@releases/v4
         with:
           branch: main
           folder: fetch-api-data-action
           target-folder: data
-          node-version: 20
